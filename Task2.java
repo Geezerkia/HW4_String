@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class Task2 {
 
 //    Створити метод findWordPosition. Метод приймає як параметри два рядки (source, target).
@@ -17,38 +15,16 @@ public class Task2 {
 //    Target: Plant
 //    Result: -1
 
-    static Scanner sc;
-    static String source;
-    static String target;
-    static int value;
-
     public static void main(String[] args) {
-        findWordPosition();
+
+        System.out.println("The index of the 1st element of the target in the source is: " +
+        findWordPosition("pollo", "Apollo"));
     }
 
-    public static void findWordPosition(){
-        doInput();
-        value = source.indexOf(target);
-        doOutput();
-    }
+    public static int findWordPosition(String target, String source){
 
-    public static void doInput() {
-        sc = new Scanner(System.in);
-        System.out.println("This method finds index of the first element of a substring (Target) " +
-                "in a string (Source).");
-        System.out.print("Please, enter a Target: ");
-        target = sc.nextLine();
-        System.out.print("Please, enter a Source: ");
-        source = sc.nextLine();
-        sc.close();
-    }
-
-    public static void doOutput(){
-        if (value == -1){
-            System.out.println("The index is: " + value + ", which means " +
-                    "no Target was found in the String");
-        } else {
-            System.out.println("The index is: " + value);
-        }
+        if(!source.contains(target)) {
+            return -1;
+        } else return source.indexOf(target);
     }
 }
