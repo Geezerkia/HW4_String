@@ -20,10 +20,14 @@ public class Task5 {
    // Використовуємо лише маленькі літери
 
     static Scanner sc;
-    static String[] products;
+    final static String[] PRODUCTS = {"apple", "orange", "lemon", "banana", "apricot", "avocado",
+            "broccoli", "carrot", "cherry", "garlic", "grape", "melon", "leek", "kiwi",
+            "mango", "mushroom", "nut", "olive", "pea", "peanut", "pear", "pepper",
+            "pineapple", "pumpkin", "potato"}; 
     static String[] poundArray;
     static int randomIndex;
     static String computerProduct;
+
     static String userProduct;
 
     public static void main(String[] args) {
@@ -32,14 +36,10 @@ public class Task5 {
         matchComputerAndUserProducts();
     }
 
-    //Initialization of the product array, pound(#) array,
-    //computer product (random fixed choice), user product (initial input).
+    //Initialization of the pound(#) array,
+    //computer product (fixed random choice),
+    //user product (manual initial input).
         public static void initValues(){
-
-        products = new String[]{"apple", "orange", "lemon", "banana", "apricot", "avocado",
-                "broccoli", "carrot", "cherry", "garlic", "grape", "melon", "leek", "kiwi",
-                "mango", "mushroom", "nut", "olive", "pea", "peanut", "pear", "pepper",
-                "pineapple", "pumpkin", "potato"};
 
         poundArray = new String[]{"#","#","#","#","#","#","#","#","#","#","#","#","#","#","#"};
 
@@ -47,18 +47,18 @@ public class Task5 {
         userProductInput();
     }
 
-    //Random fixed choice of a product by the computer
+    //Fixed random choice of a product by the computer
     public static void computerProductInput(){
         Random random = new Random();
-        randomIndex = random.nextInt(products.length);
-        computerProduct = products[randomIndex];
+        randomIndex = random.nextInt(PRODUCTS.length);
+        computerProduct = PRODUCTS[randomIndex];
     }
 
-    //Initial input of a product by the user
+    //Manual initial input of a product by the user
     public static void userProductInput(){
         sc = new Scanner(System.in);
         System.out.println("Hi! Let's play a guessing game!\n" +
-                "I have a list of " + products.length +" products:" );
+                "I have a list of " + PRODUCTS.length +" PRODUCTS:" );
         displayProducts();
         System.out.println("\nI chose one product from the list.\n" +
                            "(Computer chose '" + computerProduct + "', but don't tell it to the user:))\n"+
@@ -92,7 +92,7 @@ public class Task5 {
 
     //Display of the product array
     public static void displayProducts(){
-        for (String s : products) {
+        for (String s : PRODUCTS) {
             System.out.print(s + ", ");
         }
     }
