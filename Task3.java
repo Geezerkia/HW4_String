@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class Task3 {
 
     // Створити метод stringReverse. Метод приймає як параметр - рядок.
@@ -7,29 +5,15 @@ public class Task3 {
     // Наприклад:
     // Hello -> olleH
 
-    static Scanner sc;
-    static String str;
-    static String strReversed;
 
     public static void main(String[] args) {
-        stringReverse();
+
+        System.out.println("The original string is: " + "Apple" +
+                "\nThe reversed String is: " + stringReverse("Apple"));
     }
 
-    public static void stringReverse(){
-        doInput();
-        strReversed = new StringBuilder(str).reverse().toString();
-        doOutput();
-    }
+    public static String stringReverse(String str) {
 
-    public static void doInput(){
-        sc = new Scanner(System.in);
-        System.out.println("This method reverses a String.");
-        System.out.print("Please, enter a String to reverse: ");
-        str = sc.nextLine();
-        sc.close();
-    }
-
-    public static void doOutput(){
-        System.out.println("The reversed String is: " + strReversed);
+        return new StringBuilder(str).reverse().toString();
     }
 }
