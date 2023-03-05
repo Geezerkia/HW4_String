@@ -16,15 +16,20 @@ public class Task2 {
 //    Result: -1
 
     public static void main(String[] args) {
-
         System.out.println("The index of the 1st element of the target in the source is: " +
-        findWordPosition("pollo", "Apollo"));
+                findWordPosition("Apollo", "pollo"));
     }
-
-    public static int findWordPosition(String target, String source){
-
-        if(!source.contains(target)) {
-            return -1;
-        } else return source.indexOf(target);
+    public static int findWordPosition(String source, String target) {
+        strValidator(source, target);
+        return source.indexOf(target);
+    }
+    static void strValidator(String sourceVal, String targetVal) {
+        if (sourceVal == null) {
+            System.out.println("You entered a Null Source, please, correct.");
+            System.exit(0);
+        } else if (targetVal == null) {
+            System.out.println("You entered a Null Target, please, correct.");
+            System.exit(0);
+        }
     }
 }
